@@ -1,0 +1,19 @@
+0、在mac平台编译，工具为cmake，IDE为CLion
+
+1、obs外部依赖ffmpeg，x264，qt5
+在mac平台要预先安装上诉三个库
+brew install ffmpeg
+brew install x264
+brew install qt5
+
+2、obs寻找qt5的依赖时会找不到，要把qt的路径设置到cmake环境中
+如：-DCMAKE_PREFIX_PATH=/usr/local/Cellar/qt/5.11.1
+
+3、obs主分支代码没有完全包括plugin的一些代码，所以clone主分支后还要执行
+git submodule update --init --recursive
+来将其余代码check到本地
+
+4、完成以上即可正确编译
+
+5、如果想install到本地自定义目录，可以设置cmake参数
+如：-DCMAKE_INSTALL_PREFIX=./final
