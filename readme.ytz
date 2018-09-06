@@ -17,3 +17,5 @@ git submodule update --init --recursive
 
 5、如果想install到本地自定义目录，可以设置cmake参数
 如：-DCMAKE_INSTALL_PREFIX=./final
+
+6、如果打包成macOS安装包，make package即可
